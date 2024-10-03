@@ -22,25 +22,26 @@ export default class TodoListItem extends Component {
         }
 
         return (
-            <span className={classNames}>
+    <span className={classNames}>
         <span
-            className="todo-list-item-label"
-            onClick={onToggleDone}>
-            {label}
+                className="todo-list-item-label"
+                onClick={onToggleDone}>
+                {label}
         </span>
+        <div className="containerForBtn">
+            <button type="button"
+                    className="btn btn-outline-danger btn-sm float-right btn-custom"
+                    onClick={onDeleted}>
+              <i className="fa fa-trash"/>
+            </button>
 
-        <button type="button"
-                className="btn btn-outline-danger btn-sm float-right"
-                onClick={onDeleted}>
-          <i className="fa fa-trash-o"/>
-        </button>
-
-        <button type="button"
-                                className="btn btn-outline-success btn-sm float-right"
-                                onClick={onToggleImportant}>
-          <i className="fa fa-exclamation"/>
-        </button>
-      </span>
+            <button type="button"
+                    className="btn-custom btn btn-outline-success btn-sm float-right"
+                    onClick={onToggleImportant}>
+                <i className="fa fa-exclamation"/>
+            </button>
+        </div>
+    </span>
         );
     };
 }
