@@ -1,16 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import './todo-list-item.css';
 
 
-export default class TodoListItem extends Component {
-
-    render() {
-
-        const { label, onDeleted,
-                onToggleImportant,
-                onToggleDone,
-                important, done } = this.props;
+const TodoListItem = ({ label, onDeleted,
+                          onToggleImportant,
+                          onToggleDone,
+                          important, done }) => {
 
         let classNames = 'todo-list-item';
         if (done) {
@@ -42,6 +38,7 @@ export default class TodoListItem extends Component {
             </button>
         </div>
     </span>
-        );
-    };
-}
+    );
+};
+
+export default TodoListItem;
